@@ -9,14 +9,14 @@ body {
     justify-content: center;
 }
 /* Center content */
-.row.align-items-center{
+.row, .align-items-center{
     justify-content: center;
     text-align: center;
 }
 /* h1 tags */
 .display-5 {
     text-align: left;
-    margin-left: 15px;
+    margin-left: auto;
 }
 /* Cards */
 .card-container{
@@ -33,10 +33,21 @@ body {
     height: 200px;
     object-fit: fill;
 }
+.logo-fluid {
+    width: 100px;
+    max-width: 100%;
+}
 /* Contact */
 .img-fluid {
-    max-width: 300px;
+    width: 200px;
+    height: 200px;
+    max-width: 100%;
+}
+.icon-fluid {
+    width: 30px;
+    max-width: 100%;
     object-fit: fill;
+    cursor: pointer;
 }
 /* Footer and socials */
 .d-flex.flex-column .p-2 img {
