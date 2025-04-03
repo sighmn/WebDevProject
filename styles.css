@@ -41,7 +41,7 @@ body {
 .img-fluid {
     width: 200px;
     height: 200px;
-    max-width: 100%;
+    min-width: none;
 }
 .icon-fluid {
     width: 30px;
