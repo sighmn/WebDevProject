@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="KAIRES_AjaxQuery2025.js"></script> 
+</head>
+<body>
+
+<form id="myForm">
+<p>
+    <label for="firstName">First Name:</label>
+    <input type="text" name="First_Name" id="First_Name">
+</p>
+
+<p>
+    <label for="lastName">Last Name:</label>
+    <input type="text" name="Last_Name" id="Last_Name">
+</p>
+
+<p>
+    <label for="Role">Role:</label>
+        <select name="Role" id="Role">
+            <option value="blank"></option>
+            <option value="student">Current Student</option>
+            <option value="industry">Industry Member</option>
+            <option value="faculty">Faculty/Staff</option>
+            <option value="alumni">Alumni</option>
+            <option value="other">Other</option>
+        </select>
+</p>
+
+<p>
+    <label for="Email">Email:</label>
+    <input type="text" name="Email" id="Email" pattern="[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[a-z]{2,}$">
+</p>
+
+<p>
+    <label for="Input">Would you like to know more about K-State Salina degree paths?</label><br>
+      <input type ="radio" name = "Input" id="Input" value="Yes">
+      <label for ="Input">Yes</label>
+      <input type ="radio" name ="Input" id="Input" value="No">
+      <label for ="Input">No</label>
+</p>
+
+
+
+<input type="submit" value="Submit">
+
+</form>
+
+<div id="response"></div>
+
+</body>
+</html>
