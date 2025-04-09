@@ -22,8 +22,7 @@ body {
 .card-container{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    gap: 0.75rem;
 }
 .card {
     width: 300px;
@@ -66,3 +65,20 @@ body {
     background-size: 100% 75vh;
     background-position: center;
 }
+/* Responsive */
+@media (max-width: 768px) {
+    .img-fluid {
+      width: 100%;
+      height: auto;
+    }
+  
+    .card-container {
+      gap: 0.5rem;
+    }
+  
+    .job-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
