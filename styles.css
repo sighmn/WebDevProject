@@ -4,54 +4,107 @@ body {
     padding: 0;
     color: #333;
 }
+
 /* Changing Bootstrap layout */
-.container-fluid .row{
+.container-fluid .row {
     justify-content: center;
 }
+
 /* Center content */
-.row, .align-items-center{
+.row,
+.align-items-center {
     justify-content: center;
     text-align: center;
 }
+
 /* h1 tags */
 .display-5 {
     text-align: left;
     margin-left: auto;
 }
+
+/* Degree home */
+.degree-container {
+    position: relative;
+    width: 50%;
+}
+
+.degree-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.degree-overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #008CBA;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .3s ease;
+}
+
+.degree-container:hover .degree-overlay {
+    bottom: 0;
+    height: 100%;
+}
+
+.degree-text {
+    white-space: nowrap;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
 /* Cards */
-.card-container{
+.card-container {
     display: flex;
     justify-content: center;
     gap: 0.75rem;
 }
+
 .card {
     width: 300px;
     margin-bottom: 2rem;
 }
-.card-img-top{
+
+.card-img-top {
     height: 200px;
     object-fit: fill;
 }
+
 .logo-fluid {
     width: 100px;
     max-width: 100%;
 }
+
 /* Contact */
 .img-fluid {
     width: 200px;
     height: 200px;
     min-width: none;
 }
+
 .icon-fluid {
     width: 30px;
     max-width: 100%;
     object-fit: fill;
     cursor: pointer;
 }
+
 /* Footer and socials */
 .d-flex.flex-column .p-2 img {
     margin: 0.5rem 0;
 }
+
 /* Newsletter input */
 .locations {
     margin-top: 2rem;
@@ -65,20 +118,21 @@ body {
     background-size: 100% 75vh;
     background-position: center;
 }
+
 /* Responsive */
 @media (max-width: 768px) {
     .img-fluid {
-      width: 100%;
-      height: auto;
+        width: 100%;
+        height: auto;
     }
-  
+
     .card-container {
-      gap: 0.5rem;
+        gap: 0.5rem;
     }
-  
+
     .job-row {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
     }
-  }
+}
