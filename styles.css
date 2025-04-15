@@ -88,9 +88,11 @@ body {
 
 /* Contact */
 .img-fluid {
-    width: 200px;
-    height: 200px;
+    width: 800px;
+    height: 400px;
     min-width: none;
+    box-shadow: 2px 0 0 black;
+    border-radius: 10px;
 }
 
 .icon-fluid {
