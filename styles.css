@@ -4,17 +4,10 @@ body {
     padding: 0;
     color: #333;
 }
-
 /* Changing Bootstrap layout */
-.container-fluid .row {
+.row {
     justify-content: center;
-}
-
-/* Center content */
-.row,
-.align-items-center {
-    justify-content: center;
-    text-align: center;
+    align-self: center;
 }
 
 /*About Page Text/image formatting */
@@ -118,6 +111,8 @@ body {
 .card {
     width: 300px;
     margin-bottom: 2rem;
+    padding: 10px;
+    border: #333;
 }
 
 .card-img-top {
