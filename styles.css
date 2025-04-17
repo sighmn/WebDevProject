@@ -172,4 +172,8 @@ body {
         align-items: flex-start;
         gap: 0.5rem;
     }
+    /* Contact */
+    .col-sm-2 {
+        min-width: 100%;
+    }
 }
