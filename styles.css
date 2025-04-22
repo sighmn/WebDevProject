@@ -152,7 +152,19 @@ body {
 }
 /* Home:Video */
 .video-container {
-    
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+.embed-responsive{
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+.embed-responsive-16by9::before {
+    padding-top: 56.25%;
 }
 iframe {
     padding: 10px;
