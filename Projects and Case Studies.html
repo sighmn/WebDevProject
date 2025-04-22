@@ -22,6 +22,42 @@
             font-weight: bold;
             margin-top: 20px;
         }
+        .hero-container {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      background: url("KAIRESbuilding.jpg") center/cover no-repeat;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 10px 20px;
+      font-size: 5rem;
+      font-weight: bold;
+    }
+
+    .hero-text::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 3px;
+      background: black;
+      margin-top: 5px;
+    }
+    .hero-paragraph {
+      position: absolute;
+      top: calc(70px + 5rem + 30px); 
+      left: 20px;
+      max-width: 600px; 
+      background: rgba(255, 255, 255, 0.7);
+      padding: 15px 20px;
+      font-size: 1rem;
+      text-align: left;
+      border-radius: 8px;
+}
   </style>
 
   </head>
@@ -58,7 +94,13 @@
       </div>
   </nav>
 
-  
+  <div class="hero-container">
+    <div class="hero-text">Projects and Case Studies</div>
+    <div class="hero-paragraph">K-AIRES research is grounded in practical outcomes. Through interdisciplinary projects, we explore how immersive and intelligent systems can be used to solve pressing industry, educational, and societal challenges.
+      </div>
+  </div>
+
+
   <div class = "container-flex">
     <div class="row">
       <div class="col-md-4">
@@ -80,10 +122,9 @@
         <div class="card">
           <img class="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap">
           <div class="card-body">
-            <h4 class="card-title">Project Card 1</h4>
+            <h4 class="card-title">Virtual Reality for Pollution Prevention Training</h4>
             <p class="card-text">
-              Some quick example text to build on the card title
-              and make up the bulk of the card's content.
+              Developed with EPA support, this VR simulation helps learners identify sustainability issues like leaks, energy waste, and emissions in manufacturing environments.
             </p>
             <a href="#!" class="btn btn-primary">Go somewhere</a>
           </div>
@@ -95,10 +136,9 @@
         <div class="card">
           <img class="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap">
           <div class="card-body">
-            <h4 class="card-title">Project Card 2</h4>
+            <h4 class="card-title">XR Simulation for Uncrewed Aircraft Maintenance Tasks</h4>
             <p class="card-text">
-              Some quick example text to build on the card title
-              and make up the bulk of the card's content.
+              A collaborative effort to build immersive training modules for uncrewed aircraft operations using real-time physics and haptic feedback.
             </p>
             <a href="#!" class="btn btn-primary">Go somewhere</a>
           </div>
@@ -110,10 +150,9 @@
         <div class="card">
           <img class="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap">
           <div class="card-body">
-            <h4 class="card-title">Project Card 3</h4>
+            <h4 class="card-title">AI-Augmented Interfaces for Smart Manufacturing</h4>
             <p class="card-text">
-              Some quick example text to build on the card title
-              and make up the bulk of the card's content.
+              Integrating machine learning with immersive dashboards to enhance process control and worker productivity in automated factories.
             </p>
             <a href="#!" class="btn btn-primary">Go somewhere</a>
           </div>
@@ -123,51 +162,6 @@
       
     </div>
 
-    <div class="row">
-      <div class="col">
-        
-        <div class="card">
-          <img class="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Project Card 4</h4>
-            <p class="card-text">
-              Some quick example text to build on the card title
-              and make up the bulk of the card's content.
-            </p>
-            <a href="#!" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        
-      </div>
-      <div class="col">
-        
-        <div class="card">
-          <img class="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Project Card 5</h4>
-            <p class="card-text">
-              Some quick example text to build on the card title
-              and make up the bulk of the card's content.
-            </p>
-            <a href="#!" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        
-      </div>
-      <div class="col">
-        <div class="card">
-          <img class="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Project Card 6</h4>
-            <p class="card-text">
-              Some quick example text to build on the card title
-              and make up the bulk of the card's content.
-            </p>
-            <a href="#!" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      
     </div>
   </div>
 
