@@ -14,6 +14,58 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Labs and Facilities</title>
+    <style>
+        .hero-container {
+          position: relative;
+          width: 100%;
+          height: 80vh;
+          background: url("MLAS-Bachelors.jpg") center/cover no-repeat;
+        }
+    
+        .hero-text {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          background: rgba(255, 255, 255, 0.5);
+          padding: 10px 20px;
+          font-size: 5rem;
+          font-weight: bold;
+        }
+    
+        .hero-text::after {
+          content: "";
+          display: block;
+          width: 100px;
+          height: 3px;
+          background: black;
+          margin-top: 5px;
+        }
+    
+        .hero-paragraph {
+          position: absolute;
+          top: calc(70px + 5rem + 30px);
+          left: 20px;
+          max-width: 600px;
+          background: rgba(255, 255, 255, 0.7);
+          padding: 15px 20px;
+          font-size: 1rem;
+          text-align: left;
+          border-radius: 8px;
+        }
+        .top-left-overlay {
+            position: relative;
+            top: 0;
+            left: 0;
+            background: #4B248A;
+            color: white;
+            padding: 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+</style>
+
+
 </head>
 
 <body>
@@ -49,7 +101,31 @@
         </div>
     </nav>
 
+    <div class="hero-container">
+        <div class="hero-text">Labs and Facilities</div>
+      </div>
 
+      <div class="container-flex">
+        <div class="row">
+          <div class="col-md-4">
+        <div class="top-left-overlay">
+          <div>Success Story-</div>
+          <div style="font-size: 1rem; font-weight: normal;">John Doe</div>
+      </div>
+      </div>
+      </div>
+      
+      <div class = "row">
+        <div class ='col-sm-2'></div>
+        <div class ='col-md-8'>
+      <h3>His amazing 3D project work and revolutionizing VR/AR</h3>
+      <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      </div>
+      <div class = "col-sm-2"></div>
+      </div>
+      
+      </div>
+    
     
 </body>
 
