@@ -152,23 +152,20 @@ body {
 }
 /* Home:Video */
 .video-container {
-    width: 100%;
-    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 20px 0;
     padding: 0 15px;
 }
-.embed-responsive{
-    display: block;
-    position: relative;
+.video-container .embed-responsive {
+    flex: 1;
+    min-width: 0;
+}
+.video-container video {
     width: 100%;
-    padding: 0;
-    overflow: hidden;
-}
-.embed-responsive-16by9::before {
-    padding-top: 56.25%;
-}
-iframe {
-    padding: 10px;
-    border-radius: 15px;
+    height: auto;
+    border-radius: 10px;
 }
 
 /* Contact Page */
@@ -182,6 +179,7 @@ iframe {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* Home */
     .img-fluid {
         width: 100%;
         height: auto;
@@ -195,6 +193,10 @@ iframe {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+    }
+    /* Home:Video */
+    .video-container {
+        flex-direction: column;
     }
     /* Contact */
     .col-sm-2 {
