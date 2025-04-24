@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive 3D Model</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity
+        id="camera"
+        camera
+        position="0 5 300"
+        look-controls="enabled: false"
+        wasd-controls="enabled: false"
+      ></a-entity>
+
+      <a-entity id="modelMove" position="0 0 0" rotation="0 280 0">
+        <a-entity
+          id="model"
+          gltf-model="url(https://cdn.glitch.global/2091afbc-e5d9-4184-b4d0-4b4d400defa9/national_gallery_of_art_low_poly_game_ready.glb?v=1743711921529)"
+          scale="1 1 1">
+        </a-entity>
+      </a-entity>
+
+      <a-entity id="left-controller" laser-controls="hand: left" 
+                raycaster="objects: .clickable" 
+                line-color="#ff0000" 
+                grip-listener></a-entity>
+      <a-entity id="right-controller" laser-controls="hand: right" 
+                raycaster="objects: .clickable" 
+                line-color="#00ff00" 
+                grip-listener></a-entity>
+
+    </a-scene>
+
+    <script>
+      const modelMove = document.querySelector("#modelMove");
+      const model = document.querySelector("#model");
+
+      let isMouseDown = false;
+      let lastClientX = 0;
+      let lastClientY = 0;
+      let modelScale = 1;
+
+      document.addEventListener("mousedown", (evt) => onMouseDown(evt));
+      document.addEventListener("mousemove", (evt) => onMouseMove(evt));
+      document.addEventListener("mouseup", (evt) => onMouseUp(evt));
+      document.addEventListener("wheel", (evt) => onMouseWheel(evt));
+
+      function onMouseDown(evt) {
+        isMouseDown = true;
+        lastClientX = evt.clientX;
+        lastClientY = evt.clientY;
+      }
+
+      function onMouseMove(evt) {
+        if (isMouseDown) {
+          rotateModel(evt);
+        }
+      }
+
+      function onMouseUp(evt) {
+        isMouseDown = false;
+      }
+
+      function rotateModel(evt) {
+        const deltaX = evt.clientX - lastClientX;
+        const deltaY = evt.clientY - lastClientY;
+
+        const currentRotation = modelMove.getAttribute("rotation");
+
+        const newRotationX = currentRotation.x + deltaY * 0.25;
+        const newRotationY = currentRotation.y + deltaX * 0.25;
+
+        modelMove.setAttribute("rotation", {
+          x: newRotationX,
+          y: newRotationY,
+          z: 0,
+        });
+
+        lastClientX = evt.clientX;
+        lastClientY = evt.clientY;
+      }
+
+      function onMouseWheel(evt) {
+        modelScale -= evt.deltaY * 0.01;
+        modelScale = Math.min(Math.max(0.5, modelScale), 2.0);
+        modelMove.setAttribute("scale", `${modelScale} ${modelScale} ${modelScale}`);
+      }
+
+    </script>
+  </body>
+</html>
