@@ -1,3 +1,4 @@
+/* Universal */
 body {
     font-family: "Lato", Arial, Helvetica, sans-serif, system-ui;
     margin: 0;
@@ -9,11 +10,17 @@ body {
     justify-content: center;
     align-self: center;
 }
+<<<<<<< Updated upstream
 .btn.custom-btn {
     background-color: #7e57c2;
     color: #fff;
 }
 
+=======
+.custom-btn {
+    background-color: #7e57c2;
+}
+>>>>>>> Stashed changes
 /*About Page Text/image formatting */
 .about-section {
     background-image: url('KAIRESbuilding.jpg'); 
