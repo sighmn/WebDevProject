@@ -21,6 +21,15 @@
         if (isMouseDown) {
           rotateModel(evt);
         }
+
+
+      document.querySelectorAll('.clickable').forEach((el) => {
+            el.addEventListener('click', () => {
+            const imageUrl = el.getAttribute('image-src');
+            const sky = document.getElementById('sky');
+            sky.setAttribute('src', imageUrl);
+      });
+  });
       }
 
       function onMouseUp(evt) {
