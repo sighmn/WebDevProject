@@ -22,14 +22,6 @@
           rotateModel(evt);
         }
 
-
-      document.querySelectorAll('.clickable').forEach((el) => {
-            el.addEventListener('click', () => {
-            const imageUrl = el.getAttribute('image-src');
-            const sky = document.getElementById('sky');
-            sky.setAttribute('src', imageUrl);
-      });
-  });
       }
 
       function onMouseUp(evt) {
@@ -60,3 +52,12 @@
         modelScale = Math.min(Math.max(0.5, modelScale), 2.0);
         modelMove.setAttribute("scale", `${modelScale} ${modelScale} ${modelScale}`);
       }
+
+
+          document.querySelectorAll('.clickable').forEach((el) => {
+            el.addEventListener('click', () => {
+            const imageUrl = el.getAttribute('image-src');
+            const sky = document.getElementById('sky');
+            sky.setAttribute('src', imageUrl);
+      });
+  });
