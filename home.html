@@ -8,7 +8,7 @@
 
   <!--Script-->
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="A-frame 3D Model and Pano Images/3DModel.js"></script>
+  <script src="A-frame 3D Model and Pano Images/3DModel.js" defer></script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
@@ -261,22 +261,11 @@
          image-src="https://cdn.glitch.global/60780ad9-7b7e-4296-a558-0071d0f6f59a/pano3.jpg?v=1744233114679"
          text="value: Image 3; color: white; align: center">
         </a-plane>
-      </a-entity>
-    </a-scene>
-      
+        </a-entity>
+      </a-scene>
     </div>
-    </div>
-
-    <script>
-      document.querySelectorAll('.clickable').forEach((el) => {
-      el.addEventListener('click', () => {
-      const imageUrl = el.getAttribute('image-src');
-      const sky = document.getElementById('sky');
-      sky.setAttribute('src', imageUrl);
-    });
-  });
-    </script>
   </div>
+</div>
 
   <!--Research Preview-->
   <div class="container mt-5">
