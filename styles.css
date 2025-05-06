@@ -155,6 +155,10 @@ body {
 .locations {
     margin-top: 2rem;
 }
+.news-container {
+    box-sizing: border-box;
+    
+}
 /* Home:Video */
 .video-container {
     display: flex;
