@@ -193,18 +193,14 @@ body {
 .video-container {
     display: flex;
     flex-direction: row;
-    gap: 10px;
     margin: 20px 0;
     padding: 0 15px;
-}
-.video-container .embed-responsive {
-    flex: 1;
-    min-width: 0;
 }
 .video-container video {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    padding: 10px;
 }
 
 /* Contact Page */
@@ -217,6 +213,12 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 1225px) {
+    .rss-feed-container {
+        height: 600px !important;
+    }
+}
+
 @media (max-width: 768px) {
     /* Home */
     .img-fluid {
@@ -244,5 +246,6 @@ body {
     /* RSS FEED */
     .rss-feed-container iframe {
         height: 400px !important;
+        width: 400px !important;
     }
 }
