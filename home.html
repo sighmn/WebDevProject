@@ -6,10 +6,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!--Script-->
-  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="A-frame 3D Model and Pano Images/3DModel.js" defer></script>
-
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
 
@@ -27,21 +23,31 @@
 
   <title>K-AIRES Home</title>
   <style>
+    html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
     .hero-container {
-      position: relative;
-      width: 100%;
-      height: 80vh;
-      background: url("KAIRESbuilding.jpg") center/cover no-repeat;
+      display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: url("KAIRESbuilding.jpg") center/cover no-repeat;
+  padding: 100px 20px;
+  text-align: left;
+  height: auto; /* allow content to define height */
+  box-sizing: border-box;
+  position: relative;
     }
 
     .hero-text {
-      position: absolute;
-      top: 20px;
-      left: 20px;
       background: rgba(255, 255, 255, 0.5);
-      padding: 10px 20px;
-      font-size: 5rem;
-      font-weight: bold;
+  padding: 10px 20px;
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
     }
 
     .hero-text::after {
@@ -54,16 +60,30 @@
     }
 
     .hero-paragraph {
-      position: absolute;
-      top: calc(70px + 5rem + 30px);
-      left: 20px;
-      max-width: 600px;
       background: rgba(255, 255, 255, 0.7);
-      padding: 15px 20px;
-      font-size: 1rem;
-      text-align: left;
-      border-radius: 8px;
+  line-height: 1.5;
+  padding: 15px 20px;
+  font-size: 1rem;
+  max-width: 600px;
+  text-align: left;
+  border-radius: 8px;
     }
+
+    @media screen and (max-width: 768px) {
+    .hero-container {
+        padding: 60px 20px;
+    }
+
+    .hero-text {
+        font-size: 2rem;
+    }
+
+    .hero-paragraph {
+        font-size: 1rem;
+        max-width: 90%;
+        padding: 20px;
+    }
+}
 
     .image-container {
       position: relative;
@@ -109,26 +129,6 @@
       font-size: 1.5rem;
       font-weight: bold;
     }
-
-     /* WebXr CSS */
-    .webxr-scene-wrapper {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .webxr-scene-wrapper a-scene {
-      width: 400px;
-      height: 350px;
-      margin-top: 115px;
-      border: 2px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-    /* WebXR CSS */
-    
   </style>
 
 </head>
@@ -153,7 +153,7 @@
             <a class="nav-link" href="newsandevents.html">News and Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Collaboration and Partnerships</a>
+            <a class="nav-link" href="collab.html">Collaboration and Partnerships</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/Projects and Case Studies.html">Projects and Case Studies</a>
@@ -184,6 +184,7 @@
       Explore our work. Be part of the future.
     </div>
   </div>
+  
   <!--Immersive WebXR of the K-AIRES building page-->
   <div class="image-container">
     <div class="overlay-text">
@@ -191,81 +192,8 @@
       <div class="divider"></div>
       <div style="font-size: 1rem; font-weight: normal;">Immersive 3D WebXR experience</div>
     </div>
-    <img src="KAIRES Lobby.png" alt="K-AIRES Lobby Experience">
-
-
-    <!-- WebXr 3D Model -->
-    <div class="webxr-scene-wrapper">
-    <a-scene embedded>
-
-      <!-- Camera -->
-      <a-entity
-        id="camera"
-        camera
-        position="0 5 300"
-        look-controls="enabled: false"
-        wasd-controls="enabled: false"
-      ></a-entity>
-
-      <!-- 3D Model -->
-      <a-entity id="modelMove" position="0 0 0" rotation="0 280 0">
-        <a-entity
-          id="model"
-          gltf-model="url(https://cdn.glitch.global/2091afbc-e5d9-4184-b4d0-4b4d400defa9/national_gallery_of_art_low_poly_game_ready.glb?v=1743711921529)"
-          scale="1 1 1">
-        </a-entity>
-      </a-entity>
-
-      <!-- VR Controllers -->
-      <a-entity id="left-controller" laser-controls="hand: left" 
-                raycaster="objects: .clickable" 
-                line-color="#ff0000" 
-                grip-listener></a-entity>
-      <a-entity id="right-controller" laser-controls="hand: right" 
-                raycaster="objects: .clickable" 
-                line-color="#00ff00" 
-                grip-listener></a-entity>
-
-    </a-scene>
-      
-    <!-- WebXR Pano Images -->
-    <a-scene embedded>
-      
-      <a-camera
-          wasd-controls="enabled: false"
-          position="0 1.6 0">
-      </a-camera>
-
-      <a-entity raycaster="objects: .clickable" cursor="rayOrigin: mouse;"></a-entity>
-
-      <a-sky id="sky" src="https://cdn.glitch.global/60780ad9-7b7e-4296-a558-0071d0f6f59a/pano.jpg?v=1744221765145" rotation="0 -130 0"></a-sky>
-  
-      <a-entity position="0 1.6 -3">
-        
-        <a-text font="kelsonsans" value="KSU Salina XR Lab" width="6" position="-1 -.5 1.5"></a-text>
-
-        <a-plane position="-1.5 0 1" width="1" height="0.4" color="#4CAF50"
-         class="clickable"
-         image-src="https://cdn.glitch.global/60780ad9-7b7e-4296-a558-0071d0f6f59a/pano.jpg?v=1744221765145"
-         text="value: Image 1; color: white; align: center">
-        </a-plane>
-
-        <a-plane position="0 0 1" width="1" height="0.4" color="#4CAF50"
-         class="clickable"
-         image-src="https://cdn.glitch.global/60780ad9-7b7e-4296-a558-0071d0f6f59a/pano2.jpg?v=1744221765145"
-         text="value: Image 2; color: white; align: center">
-        </a-plane>
-
-        <a-plane position="1.5 0 1" width="1" height="0.4" color="#4CAF50"
-         class="clickable"
-         image-src="https://cdn.glitch.global/60780ad9-7b7e-4296-a558-0071d0f6f59a/pano3.jpg?v=1744233114679"
-         text="value: Image 3; color: white; align: center">
-        </a-plane>
-        </a-entity>
-      </a-scene>
-    </div>
+   <img src="KAIRES Lobby.png" alt="K-AIRES Lobby Experience"> 
   </div>
-</div>
 
   <!--Research Preview-->
   <div class="container mt-5">
@@ -353,7 +281,7 @@
       </div>
       <div class="col">
 
-        <button type="button" class="btn custom-btn btn-lg">More Research</button>
+        <button type="button" class="btn btn-primary btn-lg">More Research</button>
       </div>
 
     </div>
@@ -388,7 +316,7 @@
         <div class="card">
           <img src="/spatial-computing.jpg" alt="card-img-top" class="card-img-top">
           <div class="card-body">
-            <h5 class="card-title">Spatial Computing</h5>
+            <h5 class="card-title">Spacial Computing</h5>
             <p class="card-text">The Spatial Computing Design Undergraduate Certificate is a focused
               program that empowers students with the skills to develop applications and software
               for spatial computing environments, such as augmented reality and virtual reality.
@@ -455,21 +383,16 @@
       </div>
       <!-- Button to Right -->
       <div class="col-md-6">
-        <a href="/aboutus.html">
-          <button type="button" class="btn custom-btn btn-lg">Learn More</button>
-        </a>
+        <a href="/aboutus.html"><button type="button" class="btn btn-primary btn-lg">Learn More</button></a>
       </div>
       <!-- Vidoes -->
-      <div class="row video-container">
+      <div class="video-container row">
         <div class="col-auto embed-responsive embed-responsive-16by9">
-          <video controls="true" class="embed-responsive-item">
-            <source src="/Alien Descent Behind the Scenes - Pure Imagination Studios.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="col embed-responsive embed-responsive-16by9">
-          <video controls="true" class="embed-responsive-item">
-            <source src="/Lego-video.mp4" type="video/mp4" />
-          </video>
+          <iframe title="Placeholder Video" class="embed-responsive-item"
+            src="/Alien Descent Behind the Scenes - Pure Imagination Studios.mp4" allowfullscreen></iframe>
+          <div class="col-auto embed-responsive embed-responsive-16by9" style="float: right;">
+            <iframe src="/Lego-video.mp4" class="embed-responsive-item" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -485,7 +408,7 @@
           <h1 class="display-5">Contact Us</h1>
           <p class="text-muted">Excited to hear from you! Click here to get in touch.</p>
           <!-- Button -->
-          <a href="/contact.html"><button type="button" class="btn custom-btn btn-lg">Contact</button></a>
+          <a href="/contact.html"><button type="button" class="btn btn-primary btn-lg">Contact</button></a>
         </div>
       </div>
       <div class="col-md-5 col-sm-3">
@@ -550,5 +473,3 @@
 </body>
 
 </html>
-<script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2025/04/17/14/20250417140920-8FW6DJOD.js"></script>
