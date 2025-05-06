@@ -176,14 +176,18 @@ body {
 .d-flex.flex-column .p-2 img {
     margin: 0.5rem 0;
 }
-
 /* Newsletter input */
 .locations {
     margin-top: 2rem;
 }
 .news-container {
-    box-sizing: border-box;
-    
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    width: 50%;
+}
+.news-question {
+    font-size: 18px;
 }
 /* Home:Video */
 .video-container {
@@ -236,5 +240,9 @@ body {
     /* Contact */
     .col-sm-2 {
         min-width: 100%;
+    }
+    /* RSS FEED */
+    .rss-feed-container iframe {
+        height: 400px !important;
     }
 }
